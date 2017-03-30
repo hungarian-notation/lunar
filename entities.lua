@@ -1,9 +1,9 @@
-local Entity = eonz.detail.entity
+local Entity = lunar.detail.entity
 
 local Entities = {} ; Entities.__index = Entities
 
 function Entities.EventHandler(event, handler)
-	return { [eonz.event.getHandlerFor(event)] = handler }
+	return { [lunar.event.getHandlerFor(event)] = handler }
 end
 
 function Entities.InjectorClosure(func, ...)

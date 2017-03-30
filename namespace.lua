@@ -1,4 +1,4 @@
-local path = require 'eonz.path' -- this must be a raw require
+local path = require 'lunar.path' -- this must be a raw require
 
 local Namespace = {}
 
@@ -47,7 +47,7 @@ function Namespace:_load(key)
 	if self:hasModule(key) then
     local path = self:getModuleRequirePath(key)
     value = require(path)
-    eonz.log("required " .. path)
+    lunar.log("required " .. path)
   else
     value = self:getNamespace(key) 
     if not value:exists() then

@@ -1,5 +1,5 @@
 if _G.EONZ_VECTOR_LOADED then
-  error("eonz vector loaded twice")
+  error("lunar vector loaded twice")
 else
   _G.EONZ_VECTOR_LOADED = true
 end

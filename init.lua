@@ -1,6 +1,6 @@
 local function EXPORT_GLOBAL(key, value)
   _G[key] = value
-  eonz.log('exported "' .. key .. '" to the global table')
+  lunar.log('exported "' .. key .. '" to the global table')
 end
 
 local function EXPORT_OPT_GLOBAL(opt, def, value) 
@@ -18,16 +18,16 @@ end
 -- exported under their default name.
   
 return function(opts) 
-  local root_namespace = require 'eonz.namespace'
+  local root_namespace = require 'lunar.namespace'
   
   if opts.debug_messages then
-    root_namespace.eonz:setVariable("DEBUG", true)
-    root_namespace.eonz:setVariable("log", function (...) print (...) end)
+    root_namespace.lunar:setVariable("DEBUG", true)
+    root_namespace.lunar:setVariable("log", function (...) print (...) end)
   else
-    root_namespace.eonz:setVariable("log", function () end)
+    root_namespace.lunar:setVariable("log", function () end)
   end
     
-  EXPORT_GLOBAL("eonz", root_namespace.eonz)
-  EXPORT_OPT_GLOBAL(opts.global_vector, "vector", root_namespace.eonz.vector)
+  EXPORT_GLOBAL("lunar", root_namespace.lunar)
+  EXPORT_OPT_GLOBAL(opts.global_vector, "vector", root_namespace.lunar.vector)
   EXPORT_OPT_GLOBAL(opts.global_namespace, "lib", root_namespace)
 end
