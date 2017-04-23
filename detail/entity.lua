@@ -1,8 +1,8 @@
 local Entity = {} ; Entity.__index = Entity
 
-Entity.INJECTOR_TAG = '_eonz_isEntityInjector'
-Entity.INJECTOR_TARGET = '_eonz_injectorTarget'
-Entity.INJECTOR_ARGS = '_eonz_injectionArgs'
+Entity.INJECTOR_TAG = '_lunar_isEntityInjector'
+Entity.INJECTOR_TARGET = '_lunar_injectorTarget'
+Entity.INJECTOR_ARGS = '_lunar_injectionArgs'
 
 function Entity.create(system, id, components)
   if components._meta then
@@ -68,7 +68,7 @@ function Entity:dispatch(event, ...)
   end
   
   for k, v in ipairs(targets) do
-    eonz.event.dispatch(v, event, ...)
+    lunar.event.dispatch(v, event, ...)
   end
 end
 

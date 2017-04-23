@@ -1,7 +1,7 @@
 local event = {}
 
-local HANDLER_PREFIX = 'on'
-local DEFAULT_HANDLER = 'onEvent'
+local HANDLER_PREFIX = LUNAR_USE_SNAKE_CASE and 'on_' or 'on'
+local DEFAULT_HANDLER = LUNAR_USE_SNAKE_CASE and 'on_event' or 'onEvent'
 
 function event.getHandlerFor(eventName) return HANDLER_PREFIX..eventName end
 
